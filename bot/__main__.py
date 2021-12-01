@@ -216,6 +216,7 @@ botcmds = [
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
         (f'{BotCommands.HelpCommand}','Get Detailed Help')
+        (f'{BotCommands.SearchCommand}','Search Various Torrents 😊')
     ]
 '''
 
