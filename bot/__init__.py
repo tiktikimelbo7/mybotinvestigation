@@ -162,6 +162,7 @@ try:
     AUTO_DELETE_MESSAGE_DURATION = int(getConfig('AUTO_DELETE_MESSAGE_DURATION'))
     TELEGRAM_API = getConfig('TELEGRAM_API')
     TELEGRAM_HASH = getConfig('TELEGRAM_HASH')
+    BASE_URL = getConfig('BASE_URL_OF_BOT')
 except KeyError as e:
     LOGGER.error("One or more env variables missing! Exiting now")
     exit(1)
@@ -348,13 +349,6 @@ try:
     IGNORE_PENDING_REQUESTS = IGNORE_PENDING_REQUESTS.lower() == 'true'
 except KeyError:
     IGNORE_PENDING_REQUESTS = False
-try:
-    BASE_URL = getConfig('BASE_URL_OF_BOT')
-    if len(BASE_URL) == 0:
-        raise KeyError
-except KeyError:
-    logging.warning('BASE_URL_OF_BOT not provided!')
-    BASE_URL = None
 try:
     IS_VPS = getConfig('IS_VPS')
     IS_VPS = IS_VPS.lower() == 'true'
